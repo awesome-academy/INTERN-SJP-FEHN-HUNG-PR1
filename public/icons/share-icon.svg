@@ -1,0 +1,11 @@
+<svg width="60" height="22" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif" font-size="11" font-weight="bold">
+  <rect width="60" height="22" fill="#FF5733" rx="2"/>
+  <path 
+    d="M12 6V18M18 12H6" 
+    stroke="white" 
+    stroke-width="2" 
+    stroke-linecap="round" 
+    transform="translate(1.5, 2.5) scale(0.7)"
+  />
+  <text x="39" y="15" fill="white" text-anchor="middle">Share</text>
+</svg>

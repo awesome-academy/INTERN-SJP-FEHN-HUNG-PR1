@@ -1,5 +1,4 @@
 import React from 'react'
-import ImageSlider from './_components/ui/imageSlider'
 import { getAllFlowerPots, getBlogs, getFlowerPotsByType } from '@/lib/api'
 import PotCard from '@/components/common/potCard'
 import SmallPotCard from './_components/ui/smallPotCard'
@@ -8,7 +7,8 @@ import { AppPagination } from './_components/common/appPagination'
 import Image from 'next/image'
 import sevenDaysAgoISO from '@/utils/newParamFormat'
 import FeaturedProductsGrid from './_components/ui/featuredProductsGrid'
-import MidBanner from "@/public/mid-banner.png";
+import MidBanner from "@/public/images/mid-banner.png";
+import ImageSlider from './_components/ui/imageSlider'
 
 const DISCOUNT_ITEMS_PER_PAGE = 6;
 const NEW_ITEMS_PER_PAGE = 8;

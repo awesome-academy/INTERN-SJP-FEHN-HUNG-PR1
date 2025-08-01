@@ -64,7 +64,7 @@ const Header = () => {
 
       <div className='relative'>
         <Image 
-          src="/white-brick-bg.jpg" 
+          src="/images/white-brick-bg.jpg" 
           alt='White Brick Bg' 
           width={400} 
           height={100} 
@@ -75,14 +75,14 @@ const Header = () => {
           <div className='flex items-center justify-between h-full lg:w-[62%] md:w-[80%] w-full px-4 gap-4'>
             <div className='flex items-center'>
               <Image 
-                src='/green-shop.png' 
+                src='/images/green-shop.png' 
                 alt='Green Shop Logo' 
                 width={200} 
                 height={100} 
                 className='lg:w-[300px] md:w-[250px] w-[200px] object-contain -ml-5' 
               />
               <Image 
-                src='/header-flower.png' 
+                src='/images/header-flower.png' 
                 alt='Header Flower' 
                 width={100} 
                 height={100} 
