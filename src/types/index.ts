@@ -17,6 +17,10 @@ export interface Category {
   name: string;
 }
 
+export interface CategoryWithCount extends Category {
+  potCount: number;
+}
+
 /**
  * @description Sản phẩm chậu hoa
  */
@@ -30,9 +34,18 @@ export interface FlowerPot {
   rate: number;
   discount: number;
   createdAt: string; 
-  potColor: string;
+  colorId: string;
   categoryId: number; 
   tag: string[];
+}
+
+/**
+ * @description Các loại màu
+ */
+export interface Color {
+  id: number;
+  name: string;
+  hex: string;
 }
 
 /**

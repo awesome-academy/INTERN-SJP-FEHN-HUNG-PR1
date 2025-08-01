@@ -95,7 +95,7 @@ const Header = () => {
                   <ImPhone className='text-[12px]' /><p>HỖ TRỢ: (04) 6674 2332 - (04) 3786 8904</p>
                 </div>
                 <div className='lg:w-[400px] md:w-[300px] w-[280px] h-[50px] bg-white rounded-full mt-2 flex items-center pl-6 py-2 justify-between'>
-                  <input type="text" className='outline-none text-sm w-[80%]' placeholder='Tìm kiếm...' />
+                  <input type="text" className='outline-none text-sm w-[80%] border-none focus:ring-0' placeholder='Tìm kiếm...' />
                   <div className='flex items-center justify-center w-[60px] h-full border-l-[1px] border-gray-300'>
                     <FaSearch className='text-gray-400' />
                   </div>

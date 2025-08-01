@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import { AppBreadcrumb } from "@/components/layout/AppBreadcrumb";
+import { BreadcrumbProvider } from "@/contexts/breadcurmbContext";
 
 export const metadata: Metadata = {
   title: "Green Shop",
@@ -16,13 +18,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`w-full min-h-[100vh]`}
-      >
-        <Header />
-        <main className="mt-[225px]">
-          {children}
-        </main>
-        <Footer />
+        className={`w-full min-h-[100vh] bg-[#fbf9f9]`}
+      > 
+        <BreadcrumbProvider>
+          <Header />
+          <main className="mt-[225px]">
+              <AppBreadcrumb />
+            {children}
+          </main>
+          <Footer />
+        </BreadcrumbProvider>
       </body>
     </html>
   );
