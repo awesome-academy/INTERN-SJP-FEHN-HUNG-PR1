@@ -1,13 +1,13 @@
 import { getCategoriesWithPotCount } from '@/lib/api/categories';
 import { getPotColors } from '@/lib/api/potColors';
-import { getFlowerPotsByType } from '@/lib/api/flowerPots'; 
+import { getFlowerPotsByType } from '@/lib/api/flowerPots';
 import Image from 'next/image';
 import React from 'react';
-import ProductsDisplay from './_components/common/productsDisplay';
-import ProductSidebar from './_components/common/productSideBar';
-import { ProductPagination } from './_components/common/productPagination';
-import ListPotCard from './_components/ui/listPotCard';
-import PotCard from '@/components/common/potCard';
+import ProductsDisplay from './_components/common/ProductsDisplay';
+import ProductSidebar from './_components/common/ProductSideBar';
+import { ProductPagination } from './_components/common/ProductPagination';
+import ListPotCard from './_components/ui/ListPotCard';
+import PotCard from '@/components/common/PotCard';
 
 const Products = async ({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) => {
   const categories = await getCategoriesWithPotCount();
@@ -41,9 +41,9 @@ const Products = async ({ searchParams }: { searchParams: { [key: string]: strin
   ]
 
   const cleanSearchParams = new URLSearchParams();
-  
+
   for (const [key, value] of Object.entries(searchParams)) {
-    if (value) { 
+    if (value) {
       if (Array.isArray(value)) {
         value.forEach(v => cleanSearchParams.append(key, v));
       } else {
@@ -51,7 +51,7 @@ const Products = async ({ searchParams }: { searchParams: { [key: string]: strin
       }
     }
   }
-  
+
   const searchParamsObj = new URLSearchParams(cleanSearchParams);
   const itemsPerPage = Number(searchParamsObj.get('_limit')) || 15;
   const { data: flowerPots, total } = await getFlowerPotsByType(searchParamsObj);
@@ -79,7 +79,7 @@ const Products = async ({ searchParams }: { searchParams: { [key: string]: strin
             <Image src='/images/prod-list-header.jpg' alt='Product List Header Image' width={1200} height={600} className='w-full h-full object-cover' />
           </div>
           <div className='mt-10'>
-            <ProductsDisplay gridView={gridView} listView={listView}/>
+            <ProductsDisplay gridView={gridView} listView={listView} />
 
             <div className="mt-12 flex justify-end">
               <ProductPagination totalPages={totalPages} />

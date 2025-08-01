@@ -1,4 +1,4 @@
-import StarRating from '@/components/common/starRating'
+import StarRating from '@/components/common/StarRating'
 import { FlowerPot } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'

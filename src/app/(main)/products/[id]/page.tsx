@@ -1,17 +1,17 @@
-import { SetBreadcrumbName } from '@/components/common/setBreadcrumbName';
-import StarRating from '@/components/common/starRating';
+import { SetBreadcrumbName } from '@/components/common/SetBreadcrumbName';
+import StarRating from '@/components/common/StarRating';
 import { getAllFlowerPots, getFlowerPotById, getFlowerPotsByType } from '@/lib/api'
 import Image from 'next/image';
 import React from 'react'
-import InforPotCard from '../_components/ui/inforPotCard';
-import ProductImageGrid from '../_components/ui/productImageGrid';
-import PotInforTabs from '../_components/common/potInforTabs';
-import { AppPagination } from '../../dashboard/_components/common/appPagination';
-import PotCard from '@/components/common/potCard';
+import InforPotCard from '../_components/ui/InforPotCard';
+import ProductImageGrid from '../_components/ui/ProductImageGrid';
+import PotInforTabs from '../_components/common/PotInforTabs';
+import { AppPagination } from '../../dashboard/_components/common/AppPagination';
+import PotCard from '@/components/common/PotCard';
 
 const RELATED_ITEMS_PER_PAGE = 4;
 
-const Product = async ({ params, searchParams  }: { params: { id: string }, searchParams: { [key: string]: string | undefined } }) => {
+const Product = async ({ params, searchParams }: { params: { id: string }, searchParams: { [key: string]: string | undefined } }) => {
   const pot = await getFlowerPotById(Number(params.id));
   const pots = await getAllFlowerPots();
 
@@ -26,15 +26,15 @@ const Product = async ({ params, searchParams  }: { params: { id: string }, sear
 
   return (
     <div className='w-full'>
-      <SetBreadcrumbName name={pot.name}/>
+      <SetBreadcrumbName name={pot.name} />
       <div className='w-[62%] mt-8 ml-auto mr-auto px-4'>
-        <InforPotCard pot={pot}/>
+        <InforPotCard pot={pot} />
         <div className='w-[40%] mt-6'>
-          <ProductImageGrid pots={pots.data}/>
+          <ProductImageGrid pots={pots.data} />
         </div>
 
         <div className='w-full mt-24'>
-          <PotInforTabs pot={pot}/>
+          <PotInforTabs pot={pot} />
         </div>
 
         <div className='w-full mt-10 mb-12'>
@@ -44,7 +44,7 @@ const Product = async ({ params, searchParams  }: { params: { id: string }, sear
             </div>
             <div className='border-b-2 border-gray-200 flex-1' />
             <div className='absolute right-0 -bottom-2'>
-              <AppPagination 
+              <AppPagination
                 totalPages={relatedTotalPages}
                 paramName='related_page'
               />
@@ -53,7 +53,7 @@ const Product = async ({ params, searchParams  }: { params: { id: string }, sear
           <div className='flex gap-6 w-full mt-10'>
             {relatedPots.map((pot) => {
               return (
-                <PotCard key={pot.name} data={pot}/>
+                <PotCard key={pot.name} data={pot} />
               )
             })}
           </div>

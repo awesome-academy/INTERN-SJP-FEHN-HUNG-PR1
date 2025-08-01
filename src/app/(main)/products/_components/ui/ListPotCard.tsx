@@ -1,6 +1,5 @@
 'use client'
 
-
 import { FlowerPot } from '@/types'
 import getDiscountPrice from '@/utils/getDiscountPrice'
 import isNew from '@/utils/isNew'
@@ -8,7 +7,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { IoSearch } from 'react-icons/io5'
 import { FaHeart } from "react-icons/fa";
-import StarRating from '@/components/common/starRating'
+import StarRating from '@/components/common/StarRating'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
@@ -18,7 +17,7 @@ const ListPotCard = ({ data }: { data: FlowerPot }) => {
   return (
     <div className='relative w-full flex border border-gray-200'>
       <div className='w-[28%] aspect-square'>
-        <Image 
+        <Image
           src={`/images/${data.image}`}
           alt='Flower Pot Image'
           width={600}
@@ -42,7 +41,7 @@ const ListPotCard = ({ data }: { data: FlowerPot }) => {
       <div className='flex-1 flex flex-col justify-center gap-4 py-4 px-6'>
         <div>
           <h3 className=''>{data.name}</h3>
-          <StarRating value={data.rate}/>
+          <StarRating value={data.rate} />
           <p className='text-wrap text-[13px] text-gray-600'>{data.shortDescribe}</p>
         </div>
 
@@ -67,7 +66,7 @@ const ListPotCard = ({ data }: { data: FlowerPot }) => {
             <IoSearch />
           </div>
           <div className='w-[40px] h-[40px] flex items-center justify-center border border-gray-200 rounded-full bg-white text-black text-sm cursor-pointer hover:scale-[1.1] duration-200'>
-            <FaHeart className={isLiked ? "text-red-600" : ""} onClick={()=>setLike(!isLiked)}/>
+            <FaHeart className={isLiked ? "text-red-600" : ""} onClick={() => setLike(!isLiked)} />
           </div>
         </div>
       </div>

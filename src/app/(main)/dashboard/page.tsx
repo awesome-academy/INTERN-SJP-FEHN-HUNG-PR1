@@ -1,14 +1,14 @@
 import React from 'react'
 import { getAllFlowerPots, getBlogs, getFlowerPotsByType } from '@/lib/api'
-import PotCard from '@/components/common/potCard'
-import SmallPotCard from './_components/ui/smallPotCard'
-import NewsCard from './_components/ui/newsCard'
-import { AppPagination } from './_components/common/appPagination'
+import PotCard from '@/components/common/PotCard'
+import SmallPotCard from './_components/ui/SmallPotCard'
+import NewsCard from './_components/ui/NewsCard'
+import { AppPagination } from './_components/common/AppPagination'
 import Image from 'next/image'
 import sevenDaysAgoISO from '@/utils/newParamFormat'
 import FeaturedProductsGrid from './_components/ui/featuredProductsGrid'
 import MidBanner from "@/public/images/mid-banner.png";
-import ImageSlider from './_components/ui/imageSlider'
+import ImageSlider from './_components/ui/ImageSlider'
 
 const DISCOUNT_ITEMS_PER_PAGE = 6;
 const NEW_ITEMS_PER_PAGE = 8;
@@ -61,8 +61,8 @@ const Dashboard = async ({ searchParams }:
             </div>
             <div className='border-b-2 border-gray-200 flex-1' />
           </div>
-          
-          <FeaturedProductsGrid products={flowerPots}/>
+
+          <FeaturedProductsGrid products={flowerPots} />
 
           <div className='flex w-full gap-6 mt-16'>
             <div className='w-[calc(25%-18px)]'>
@@ -74,10 +74,10 @@ const Dashboard = async ({ searchParams }:
               </div>
               <div className='mt-10 w-full border-t-[1px] border-gray-300'>
                 {flowerPots.slice(0, 6).map((pot) => {
-                  return <SmallPotCard key={pot.name} data={pot}/>
+                  return <SmallPotCard key={pot.name} data={pot} />
                 })}
               </div>
-            </div> 
+            </div>
             <div className='flex-1 h-4'>
               <div className='relative flex w-full'>
                 <div className='w-fit py-3 border-b-2 border-green-500'>
@@ -85,7 +85,7 @@ const Dashboard = async ({ searchParams }:
                 </div>
                 <div className='border-b-2 border-gray-200 flex-1' />
                 <div className='absolute right-0 -bottom-2'>
-                  <AppPagination 
+                  <AppPagination
                     totalPages={discountTotalPages}
                     paramName='discount_page'
                   />
@@ -93,14 +93,14 @@ const Dashboard = async ({ searchParams }:
               </div>
               <div className='mt-10 w-full grid grid-flow-row grid-cols-3 gap-6'>
                 {discountedPots.map((pot) => {
-                  return <PotCard key={pot.name} data={pot}/>
+                  return <PotCard key={pot.name} data={pot} />
                 })}
               </div>
             </div>
           </div>
 
           <div className='w-full mt-12'>
-            <Image 
+            <Image
               src={MidBanner}
               alt='Mid Banner'
               width={1140}
@@ -115,7 +115,7 @@ const Dashboard = async ({ searchParams }:
             </div>
             <div className='border-b-2 border-gray-200 flex-1' />
             <div className='absolute right-0 -bottom-2'>
-              <AppPagination 
+              <AppPagination
                 totalPages={newTotalPages}
                 paramName='new_page'
               />
@@ -124,7 +124,7 @@ const Dashboard = async ({ searchParams }:
 
           <div className='mt-10 w-full grid grid-flow-row grid-cols-4 gap-6'>
             {newPots.map((pot) => {
-              return <PotCard key={pot.name} data={pot}/>
+              return <PotCard key={pot.name} data={pot} />
             })}
           </div>
 
@@ -137,7 +137,7 @@ const Dashboard = async ({ searchParams }:
 
           <div className='mt-10 w-full grid grid-flow-row grid-cols-3 gap-6'>
             {blogs.map((blog) => {
-              return <NewsCard key={blog.title} data={blog}/>
+              return <NewsCard key={blog.title} data={blog} />
             })}
           </div>
         </div>
