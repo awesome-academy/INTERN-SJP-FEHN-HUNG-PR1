@@ -43,6 +43,7 @@ export interface Blog {
   tags: string[];
   title: string;
   content: string;
+  previewContent: string;
   createdAt: string;
   previewImage: string;
 }
