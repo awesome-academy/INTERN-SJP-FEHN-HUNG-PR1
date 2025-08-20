@@ -15,9 +15,9 @@ import { cn } from '@/lib/utils';
 
 const ImageSlider = () => {
   const slideImages = [
-    { id: 1, src: '/img-slide.png', alt: 'Slide 1' },
-    { id: 2, src: '/img-slide.png', alt: 'Slide 2' },
-    { id: 3, src: '/img-slide.png', alt: 'Slide 3' },
+    { id: 1, src: '/images/img-slide.png', alt: 'Slide 1' },
+    { id: 2, src: '/images/img-slide.png', alt: 'Slide 2' },
+    { id: 3, src: '/images/img-slide.png', alt: 'Slide 3' },
   ];
 
   const [api, setApi] = useState<CarouselApi>();

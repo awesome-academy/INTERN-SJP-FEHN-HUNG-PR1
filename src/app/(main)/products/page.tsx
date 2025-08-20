@@ -5,9 +5,9 @@ import Image from 'next/image';
 import React from 'react';
 import ProductsDisplay from './_components/common/productsDisplay';
 import ProductSidebar from './_components/common/productSideBar';
-import PotCard from '@/components/ui/potCard';
 import { ProductPagination } from './_components/common/productPagination';
 import ListPotCard from './_components/ui/listPotCard';
+import PotCard from '@/components/common/potCard';
 
 const Products = async ({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) => {
   const categories = await getCategoriesWithPotCount();
@@ -76,7 +76,7 @@ const Products = async ({ searchParams }: { searchParams: { [key: string]: strin
 
         <div className='flex-1'>
           <div className='w-full h-[160px]'>
-            <Image src='/prod-list-header.jpg' alt='Product List Header Image' width={1200} height={600} className='w-full h-full object-cover' />
+            <Image src='/images/prod-list-header.jpg' alt='Product List Header Image' width={1200} height={600} className='w-full h-full object-cover' />
           </div>
           <div className='mt-10'>
             <ProductsDisplay gridView={gridView} listView={listView}/>

@@ -29,6 +29,10 @@ export interface FlowerPot {
   name: string;
   shortDescribe: string;
   information: string;
+  commonName: string;
+  scientificName: string;
+  family: string;
+  height: string;
   image: string;
   price: number;
   rate: number;

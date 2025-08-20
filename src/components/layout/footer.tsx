@@ -73,7 +73,7 @@ const Footer = () => {
         <div className='lg:flex justify-between lg:w-[62%] md:w-[80%] w-full px-4'>
           <div className='w-[370px] mb-6 lg:mb-0'>
             <Image 
-              src='/green-shop.png' 
+              src='/images/green-shop.png' 
               alt='Green Shop Logo' 
               width={300} 
               height={100} 

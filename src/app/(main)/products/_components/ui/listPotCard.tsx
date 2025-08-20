@@ -1,6 +1,6 @@
 'use client'
 
-import StarRating from '@/components/ui/starRating'
+
 import { FlowerPot } from '@/types'
 import getDiscountPrice from '@/utils/getDiscountPrice'
 import isNew from '@/utils/isNew'
@@ -8,6 +8,9 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { IoSearch } from 'react-icons/io5'
 import { FaHeart } from "react-icons/fa";
+import StarRating from '@/components/common/starRating'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 const ListPotCard = ({ data }: { data: FlowerPot }) => {
   const [isLiked, setLike] = useState<boolean>(false);
@@ -16,7 +19,7 @@ const ListPotCard = ({ data }: { data: FlowerPot }) => {
     <div className='relative w-full flex border border-gray-200'>
       <div className='w-[28%] aspect-square'>
         <Image 
-          src={`/${data.image}`}
+          src={`/images/${data.image}`}
           alt='Flower Pot Image'
           width={600}
           height={600}
@@ -55,9 +58,11 @@ const ListPotCard = ({ data }: { data: FlowerPot }) => {
         </div>
 
         <div className='flex gap-3'>
-          <button className='bg-green-500 text-white px-8 h-[40px] rounded-full text-sm cursor-pointer hover:scale-[1.1] duration-200'>
-            MUA NGAY
-          </button>
+          <Button variant="link">
+            <Link href={`/products/${data.id}`}>
+              MUA NGAY
+            </Link>
+          </Button>
           <div className='w-[40px] h-[40px] flex items-center justify-center border border-gray-200 rounded-full bg-white text-black text-sm cursor-pointer hover:scale-[1.1] duration-200'>
             <IoSearch />
           </div>
