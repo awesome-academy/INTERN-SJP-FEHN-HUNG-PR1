@@ -15,7 +15,7 @@ function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
       role="navigation"
       aria-label="pagination"
       data-slot="pagination"
-      className={cn("mx-auto flex justify-center w-full", className)}
+      className={cn("mx-auto flex justify-end w-full", className)}
       {...props}
     />
   )
@@ -58,9 +58,11 @@ function PaginationLink({
       data-active={isActive}
       className={cn(
         !hasChildren && buttonVariants({
-          variant: isActive ? "outline" : "ghost",
+          variant: "outline",
           size,
         }),
+        isActive && "bg-green-400 text-white hover:bg-green-400 hover:text-white"
+        ,
         className
       )}
       {...props}
@@ -76,15 +78,14 @@ function PaginationPrevious({
   return (
     <PaginationLink
       aria-label="Go to previous page"
-      size={children ? "custom" : "default"}
-      className={cn("gap-1 px-2.5 sm:pl-2.5", className)}
+      size="default"
+      className={cn("gap-1 px-4 sm:pl-4", className)}
       hasChildren={!!children}
       {...props}
     > 
        {children ? children : (
           <>
-            <ChevronLeftIcon />
-            <span className="hidden sm:block">Previous</span>
+            <span className="hidden sm:block">Trang trước</span>
           </>
        )}
     </PaginationLink>
@@ -99,15 +100,14 @@ function PaginationNext({
   return (
     <PaginationLink
       aria-label="Go to next page"
-      size={children ? "custom" : "default"}
-      className={cn("gap-1 px-2.5 sm:pr-2.5", className)}
+      size="default"
+      className={cn("gap-1 px-4 sm:pr-4", className)}
       hasChildren={!!children}
       {...props}
     > 
        {children ? children : (
           <>
-            <span className="hidden sm:block">Next</span>
-            <ChevronRightIcon />
+            <span className="hidden sm:block text-[13px] font-light">Trang sau</span>
           </>
        )}
     </PaginationLink>
