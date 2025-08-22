@@ -1,11 +1,11 @@
 'use client'
 
-import StarRating from '@/components/common/starRating'
+import StarRating from '@/components/common/StarRating'
 import { FlowerPot } from '@/types'
 import getDiscountPrice from '@/utils/getDiscountPrice'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import AdjustAmountInput from './adjustAmountInput'
+import AdjustAmountInput from './AdjustAmountInput'
 import { Button } from '@/components/ui/button'
 import { IoSearch } from 'react-icons/io5'
 import { FaHeart } from "react-icons/fa";
@@ -25,11 +25,11 @@ const InforPotCard = ({ pot }: { pot: FlowerPot }) => {
   const [amount, setAmount] = useState<number>(1);
   const [isLiked, setLike] = useState<boolean>(false);
 
-  return ( 
+  return (
     <div className='w-full'>
       <div className='flex items-center w-full gap-10'>
         <div className='w-[40%] aspect-square'>
-          <Image 
+          <Image
             src={`/images/${pot.image}`}
             alt='Pot Image'
             width={1110}
@@ -40,7 +40,7 @@ const InforPotCard = ({ pot }: { pot: FlowerPot }) => {
         <div className='flex-1'>
           <div className='flex flex-col gap-1 border-b border-gray-300 py-5'>
             <h3 className=''>{pot.name}</h3>
-            <StarRating value={pot.rate}/>
+            <StarRating value={pot.rate} />
             <div className='flex items-end gap-3'>
               {pot.discount > 0 && (
                 <span className='text-red-500 text-lg font-semibold'>
@@ -57,7 +57,7 @@ const InforPotCard = ({ pot }: { pot: FlowerPot }) => {
           </div>
           <div className='py-5 border-b border-gray-300 flex items-center gap-6'>
             <span className='text-sm'>Số lượng</span>
-            <AdjustAmountInput amount={amount} setAmount={setAmount}/>
+            <AdjustAmountInput amount={amount} setAmount={setAmount} />
           </div>
           <div className='py-5 flex items-center gap-3'>
             <Button variant="link">
@@ -67,7 +67,7 @@ const InforPotCard = ({ pot }: { pot: FlowerPot }) => {
               <IoSearch />
             </div>
             <div className='w-[40px] h-[40px] flex items-center justify-center border border-gray-200 rounded-full bg-white text-black text-sm cursor-pointer hover:scale-[1.1] duration-200'>
-              <FaHeart className={isLiked ? "text-red-600" : ""} onClick={()=>setLike(!isLiked)}/>
+              <FaHeart className={isLiked ? "text-red-600" : ""} onClick={() => setLike(!isLiked)} />
             </div>
           </div>
           <div className='py-4 flex items-center gap-2'>

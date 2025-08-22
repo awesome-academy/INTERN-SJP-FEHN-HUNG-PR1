@@ -13,7 +13,7 @@ import { FaCcMastercard } from "react-icons/fa";
 import { FaCcPaypal } from "react-icons/fa";
 import { FaCcDiscover } from "react-icons/fa";
 import { FaRegCopyright } from "react-icons/fa";
-import FooterLinkColumn from './footerColumnLink';
+import FooterLinkColumn from './FooterColumnLink';
 
 const socialIcons = [
   { key: 'fb', Icon: FaFacebookF },
